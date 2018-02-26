@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+textarea {
+	resize: none;
+	width: 1000px;
+	height: 70px;
+}
+</style>
+</head>
+<body>
+	<form action="output.jsp" method="post">
+
+		<!-- 한 줄 텍스트 입력 -->
+		text : <input type="text" name="a">
+		<p>
+			<!-- 여러줄 텍스트 입력 -->
+			<textarea name="b">기본 입력</textarea>
+		<p>
+			<!-- 숨겨야하는 텍스트 입력 -->
+			password : <input type="password" name="c">
+		<p>
+			<!-- 목록 중에 선택 name이 같은 것 끼리 jsp에 넘어가는건 value-->
+			radio : <input type="radio" name="d" value="ㅋ"> d1 <br>
+			radio : <input type="radio" name="d" value="ㄷ"> d2 <br>
+			radio : <input type="radio" name="d" value="ㅁ" checked="checked">
+			d3 <br> radio : <input type="radio" name="d" value="ㅍ">
+			d4 <br>
+		<p>
+			select : <br> <select name="e" size="5">
+				<option value="zzz">e1</option>
+				<option>e2</option>
+				<option>e3</option>
+				<option>e4</option>
+				<option>e5</option>
+				<option>e6</option>
+			</select>
+		<p>
+			<!-- 목록 중에 여러개 선택 checkbox 쓸 때는 POST방식으로 보내야 함-->
+			checkbox : <br> <input type="checkbox" name="f" value="ㅋ">f1<br>
+			<input type="checkbox" name="f" value="X">f2<br> <input
+				type="checkbox" name="f" value="C">f3<br> <input
+				type="checkbox" name="f" value="V">f4<br> <input
+				type="checkbox" name="f" value="B">f5<br> <input
+				type="checkbox" name="f" value="N">f6<br>
+		<p>
+			<!-- 글자 버튼 -->
+			<input type="submit" name = "a" value="글자 버튼">
+		<p>
+	</form>
+</body>
+</html>
+
+
+

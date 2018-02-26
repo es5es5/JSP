@@ -1,0 +1,53 @@
+@charset "EUC-KR";
+
+input {
+	outline: none; /* 선택했을때 기본으로 들어가는 퍼런 선 제거 */
+	border: none;
+	font-size: 15pt;
+	background-color: transparent;
+	width: 95%;
+	border-bottom: #8D6E63 solid 3px;
+}
+
+#btn {
+	color: #8D6E63;
+	border:#8D6E63 solid 3px;
+	font-size: 20pt;
+	font-weight: 800;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	color: #8D6E63;
+	box-shadow: 5px 5px 5px black;
+	width: 300px;
+}
+
+#titleTd, #titleTd2 {
+	font-size: 25pt;
+	font-weight: 900;
+	height: 60px;
+}
+
+#titleTd2 {
+	background-color: #8D6E63;
+	color:white;
+}
+
+.xy {
+	font-size: 15pt;
+	width: 20%;
+	font-weight: 700;
+	height: 40px;
+}
+
+.xy3{
+	font-size: 20pt;
+	color:#8D6E63;
+	height: 50px;
+	padding-left: 20px;
+}
+.btnArea {
+	height: 50px;
+}

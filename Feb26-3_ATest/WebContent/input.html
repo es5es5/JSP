@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="ATest.css">
+</head>
+<body>
+	<form action="output.jsp" method="post">
+		<table>
+			<tr>
+				<td>
+					<h1 class="title" align="center">회원가입</h1>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<h3 class="title" align="left">ID</h3>
+				</td>
+				<td><input type="text" class="inputText" name="id"></td>
+
+			</tr>
+			<tr>
+				<td>
+					<h3 class="title" align="left">PW</h3>
+				</td>
+				<td><input type="text" class="inputText" name="pw1"></td>
+
+			</tr>
+			<tr>
+				<td>
+					<h3 class="title" align="left">PW 확인</h3>
+				</td>
+				<td><input type="text" class="inputText" name="pw2"></td>
+
+			</tr>
+			<tr>
+				<td>
+					<h3 class="title" align="left">이름</h3>
+				</td>
+				<td><input type="text" class="inputText" name="name"></td>
+
+			</tr>
+			<tr>
+				<td>
+					<h3 class="title" align="left">나이</h3>
+				</td>
+				<td><input type="text" class="inputText" name="age"></td>
+
+			</tr>
+			<tr>
+				<td>
+					<h3 class="title" align="left">성별</h3>
+				</td>
+				<td><input type="radio" name="sex" value="남자"> 남 <input
+					type="radio" name="sex" value="여자"> 여</td>
+			</tr>
+			<tr>
+				<td>
+					<h3 class="title" align="left">관심사</h3>
+				</td>
+				<td>
+				<input type="checkbox" name="inter" value="it">IT<br>
+				<input type="checkbox" name="inter" value="game">GAME<br>
+				<input type="checkbox" name="inter" value="girls">여자<br>
+				<input type="checkbox" name="inter" value="guys">남자<br>
+				</td>
+			</tr>
+			<tr>
+			<td>
+			<select>
+			</select>
+			</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td><input id="btn" type="image" src="submit.jpg"
+					name="submitBtn" value="제출"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
