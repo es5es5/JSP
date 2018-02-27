@@ -8,7 +8,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css.css">
 </head>
 <body>
 	<%
@@ -22,13 +21,10 @@
 		fileName = URLEncoder.encode(fileName, "euc-kr");
 		fileName = fileName.replace("+", " ");
 	%>
-	<table>
+
+	<table id="outerTable">
 		<tr>
-			<td id="titleTd" colspan="2" align="center" valign="middle">신청
-				결과</td>
-		</tr>
-		<tr>
-			<td class="td1">사진</td>
+			<td id="titleTd">결과</td>
 			<td><img src="img/<%=fileName%>"></td>
 		</tr>
 		<tr>
@@ -36,15 +32,12 @@
 			<td><%=mr.getParameter("name")%></td>
 		</tr>
 		<tr>
-			<td class="td1">나이</td>
-			<td><%=mr.getParameter("age")%></td>
+			<td class="td1">키</td>
+			<td><%=mr.getParameter("height")%></td>
 		</tr>
 		<tr>
-			<td class="td1">성별</td>
-			<td><%=mr.getParameter("sex")%></td>
-		<tr>
-			<td class="td1">시험명</td>
-			<td><%=mr.getParameter("test")%></td>
+			<td class="td1">몸무게</td>
+			<td><%=mr.getParameter("weight")%></td>
 		</tr>
 	</table>
 </body>

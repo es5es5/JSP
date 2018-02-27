@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+	<form action="output.jsp" method="post" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td id="titleTd" colspan="2" align="center" valign="middle">비만도
+					검사</td>
+			</tr>
+			<tr>
+				<td class="td1">이름</td>
+				<td><input name="name" class="txtInput"></td>
+			</tr>
+			<tr>
+				<td class="td1">키</td>
+				<td><input name="height" class="txtInput"></td>
+			</tr>
+			<tr>
+				<td class="td1">몸무게</td>
+				<td><input name="weight" class="txtInput"></td>
+			</tr>
+			<tr>
+				<td class="td1">사진</td>
+				<td><input type="file" name="img"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input id="btn" type="submit"
+					value="결과 확인"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
