@@ -1,0 +1,55 @@
+@charset "EUC-KR";
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px; /* 전체 테이블 사이즈 */
+	border: #4374D9 solid 3px; /* 테이블 외곽선 */
+	box-shadow: 10px 1000px 10px black;
+}
+
+#titleTd {
+	font-size: 20pt;
+	color: #4374D9;
+	font-weight: 900;
+	height: 50px;
+}
+
+.td1 {
+	font-size: 13pt;
+	color: #4374D9;
+	width: 20%; /* 전체 테이블에 비례해서 */
+	height: 30px;
+	padding-left: 10px;
+	font-weight: 900;
+}
+
+input {
+	outline: none;
+}
+
+.txtInput:focus {
+	border-bottom: #FFBB00 solid 2px;
+}
+
+input, select {
+	outline: none;
+}
+
+.txtInput, select {
+	border: none;
+	border-bottom: #4374D9 solid 2px;
+	width: 90%;
+	height: 30px;
+	font-size: 13pt;
+}
+
+#btn {
+	border: none;
+	width: 80%;
+	height: 50px;
+	background-color: #4374D9;
+	color: white;
+	font-weight: 800;
+	font-size: 14pt;
+}
