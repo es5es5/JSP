@@ -1,0 +1,67 @@
+@charset "EUC-KR";
+
+#titleTd {
+	font-size: 30pt;
+	color: #47C83E;
+	font-weight: 900;
+	height: 50px;
+}
+
+#inputtable {
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px; /* 전체 테이블 사이즈 */
+	height: 240px;
+	border: #B7F0B1 solid 3px; /* 테이블 외곽선 */
+}
+
+input, select {
+	outline: none;
+}
+
+.txtInput, select {
+	border: none;
+	border-bottom: #4374D9 double 0.5px;
+	width: 90%;
+	height: 30px;
+	font-size: 13pt;
+}
+
+.resultTd {
+	font-size: 20pt;
+	color: #6799FF;
+	font-weight: 900;
+	height: 50px;
+}
+
+#tablered{
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px; /* 전체 테이블 사이즈 */
+	height: 240px;
+	border: #F361A6 solid 3px; /* 테이블 외곽선 */
+}
+
+#tableblue{
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px; /* 전체 테이블 사이즈 */
+	height: 240px;
+	border: #6B66FF solid 3px; /* 테이블 외곽선 */
+}
+
+#tableyellow{
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px; /* 전체 테이블 사이즈 */
+	height: 240px;
+	border: #FAED7D solid 3px; /* 테이블 외곽선 */
+}
+
+#tablegreen{
+	margin-left: auto;
+	margin-right: auto;
+	width: 350px; /* 전체 테이블 사이즈 */
+	height: 240px;
+	border: #CEF279 solid 3px; /* 테이블 외곽선 */
+}

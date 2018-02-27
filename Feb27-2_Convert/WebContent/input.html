@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+	<form action="output.jsp" method="post">
+		<table id="inputtable">
+			<tr>
+				<td id="titleTd" colspan="2" align="center" valign="middle">단위
+					변환</td>
+			</tr>
+			<tr>
+				<td class="td1" align="center">숫자</td>
+				<td><input name="input" class="txtInput" autofocus="autofocus"></td>
+			</tr>
+			<tr>
+				<td class="td1" align="center">단위</td>
+				<td><select name="convert">
+						<option value="mmToCm">㎜→㎝</option>
+						<option value="cmToM">㎝→m</option>
+						<option value="mToKm">m→㎞</option>
+						<option value="mToInch">m→inch</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input id="btn" type="submit"
+					value="변환하기"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

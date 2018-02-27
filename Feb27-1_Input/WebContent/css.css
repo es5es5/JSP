@@ -53,3 +53,8 @@ input, select {
 	font-weight: 800;
 	font-size: 14pt;
 }
+
+img{
+	max-width: 100px;
+	max-height: 100px;
+}

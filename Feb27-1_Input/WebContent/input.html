@@ -6,10 +6,11 @@
 <link rel="stylesheet" href="css.css">
 </head>
 <body>
-	<form action="output.jsp">
+	<form action="output.jsp" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
-				<td id="titleTd" colspan="2" align="center" valign="middle">신청 결과</td>
+				<td id="titleTd" colspan="2" align="center" valign="middle">신청
+					결과</td>
 			</tr>
 			<tr>
 				<td class="td1">이름</td>
@@ -22,9 +23,9 @@
 			</tr>
 			<tr>
 				<td class="td1">성별</td>
-				<td><input type="radio" name="sex" value="남자"
-					checked="checked">남 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input
-					type="radio" name="sex" value="여자">여</td>
+				<td><input type="radio" name="sex" value="남자" checked="checked">남
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="sex"
+					value="여자">여</td>
 			<tr>
 				<td class="td1">시험명</td>
 				<td><select name="test">
@@ -32,6 +33,10 @@
 						<option>정보처리기사</option>
 						<option>리눅스마스터</option>
 				</select></td>
+			</tr>
+			<tr>
+				<td class="td1">사진</td>
+				<td><input type="file" name="img"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input id="btn" type="submit"
