@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel= "stylesheet" href="css.css">
+
+<script type="text/javascript" src="validCheck.js"></script>
+<script type="text/javascript" src="feb28check.js"></script>
+</head>
+<body>
+	<form action="a.jsp" name="myForm" onsubmit="return check();" method ="post" enctype="multipart.form">
+		ID : <input name="id" maxlength="10" autofocus="autofocus">
+		<p>
+			PW : <input name="pw" maxlength="15" type="password">
+		<p>
+			PW 확인 : <input name="pw2" maxlength="15" type="password">
+		<p>
+			나이 : <input name="age" maxlength="3">
+		<p>
+			사진 : <input type="file" name="img">
+		<p>
+			<input type="submit" value="가입">
+	</form>
+</body>
+</html>
+

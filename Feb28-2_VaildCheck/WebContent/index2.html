@@ -58,9 +58,43 @@
 		}
 
 		// PW확인 ------------------------------
+		if(pwField.value != pwChkField.value){
+			alert("PW확인");
+			pwField.value = "";
+			pwChkField.value = "";
+			pwField.focus();
+			return false;
+		}
 		
+		// PW조합 --------------------- 소문자, 숫자
+		// 분류별로
+		var l = "qwertyuiopasdfghjklzxcvbnm";
+		var lOK = false; 
+		for (var i = 0; i < l.length; i++) {
+			if( pwField.value.indexOf(l[i]) != -1){
+				lOK = true;
+				break;
+			}
+		}
 		
-		// PW조합 ------------------------------
+		var n = "1234567890";
+		var nOK = false;
+		for (var i = 0; i < n.length; i++) {
+			if( pwField.value.indexOf(n[i]) != -1){
+				nOK = true;
+				break;
+			}
+		}
+		var s = "!@#$%^&*()_=\"";
+		
+		if(!lOK || !nOK){
+			alert("PW조합");
+			pwField.value = "";
+			pwChkField.value = "";
+			pwField.focus();
+			return false;
+		}
+				
 		return true;
 	}
 </script>
@@ -75,7 +109,9 @@
 		<p>
 			PW : <input name="pw" type="password">
 		<p>
-			PW확인 : <input name="pwChk" type="password"><p></form>
+			PW확인 : <input name="pwChk" type="password"><p>
+		<input type="submit">	
+		</form>
 </body>
 </html>
 

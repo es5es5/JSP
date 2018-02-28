@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="validCheck.js"></script>
+<script type="text/javascript" src="feb28check.js"></script>
+</head>
+<body>
+	<form action="a.jsp" name="myForm" onsubmit="return check();">
+		ID : <input name="id" maxlength="10" placeholder="필수, 4~10글자, 한글안돼"
+			autofocus="autofocus">
+		<p>
+			PW : <input name="pw" maxlength="10" type="password"
+				placeholder="필수, 4~10글자">
+		<p>
+			<input type="submit" value="가입">
+	</form>
+</body>
+</html>
+
