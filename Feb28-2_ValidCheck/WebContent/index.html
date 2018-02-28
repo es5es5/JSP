@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var txt = "I got a boy";
+
+	/*
+	alert(txt.length); // 글자 수
+	alert(txt.toLowerCase());
+	alert(txt.toUpperCase());
+
+	alert(txt[3]); // 그 위치에 있는 글자
+	alert(txt.indexOf("o")); // 그 글자는 몇 번째에 있는지
+
+	alert(txt.indexOf("ㅋ")); // 없으면 -1
+	 */
+
+	function check() {
+		// <input> 가져오기
+		// document 이 HTML파일을 의미
+		var nameField = document.f.name; // document.form이름.input이름
+		var ageField = document.f.age; // document.form이름.input이름
+		var idField = document.f.id;
+		var pwField = document.f.pw;
+		var pw2Field = document.f.pw2;
+
+		// <input>에 쓴 내용
+		// alert(nameField.value);
+
+		// 필수 처리
+		if (!nameField.value) {
+			alert("이름 써");
+			nameField.focus(); // 커서 갖다놓기
+			return false;
+
+			// 글자 수 처리 -- 2 ~ 10이하
+		} else if (nameField.value.length < 2) {
+			alert("이름 글자수 2~10로 해라");
+			nameField.value = ""; // 잘못된 것 지워주기
+			nameField.focus(); // 커서 갖다놓기
+			return false;
+
+			// 숫자 입력 검사 --
+		} else if (isNaN(ageField.value)) {
+			alert("나이에 숫자만 넣어라");
+			ageField.value = "";
+			ageField.focus();
+			return false;
+		}
+
+		// ID에 한글 못 쓰게
+		// ㄱ~ㅎ --> 영어, 숫자만 쓰게
+
+		var t = "1234567890qwertyuiopasdfghjklzxcvbnm";
+
+		for (var i = 0; i < idField.value.length; i++) {
+			if (t.indexOf(idField.value.toLowerCase()[i]) == -1) {
+				alert("ID에 한글 쓰지마");
+				idField.value = "";
+				idField.focus();
+				return false;
+			}
+		}
+
+		// PW 확인
+		if (pwField.value != pw2Field.value) {
+			alert("PW 같은지 확인 해라");
+			pwField.value = "";
+			pw2Field.value = "";
+			pwField.focus();
+			return false;
+		}
+
+		// PW 조합
+		// 소문자, 숫자
+		var l = "qwertyuiopasdfgghjklzxcvbnm";
+		var lOk = false;
+
+		var n = "1234567890";
+		var nOk = false;
+		
+		var s = "!@#$%^&*()+-_=\'\"{}?.,\\";
+		var sOk = false;
+
+		for (var i = 0; i < l.length; i++) {
+			if (pwField.value.indexOf(l[i]) != -1) {
+				lOk = true;
+				break;
+			}
+		}
+
+		for (var i = 0; i < n.length; i++) {
+			if (pwField.value.indexOf(n[i]) != -1) {
+				nOk = true;
+				break;
+			}
+		}
+		
+		for (var i = 0; i < s.length; i++) {
+			if (pwField.value.indexOf(s[i]) != -1) {
+				sOk = true;
+				break;
+			}
+		}
+
+		if (!lOk || !nOk || !sOk) {
+			alert("숫자,영어, 특수문자를 조합해서 PW 만들어라");
+			pwField.value = "";
+			pw2Field.value = "";
+			pwField.focus();
+			return false;
+		}
+
+		return true;
+	}
+</script>
+</head>
+<body>
+	<form name="f" action="output.jsp" onsubmit="return check();">
+		이름 : <input name="name" maxlength="10">
+		<p>
+			나이 : <input name="age">
+		<p>
+			ID : <input name="id">
+		<p>
+			PW : <input name="pw" type="password">
+		<p>
+			PW확인 : <input name="pw2" type="password">
+		<p>
+			<input type="submit" value="ㄱㄱ">
+	</form>
+</body>
+</html>
