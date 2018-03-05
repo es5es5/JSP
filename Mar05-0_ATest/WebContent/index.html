@@ -5,15 +5,14 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css.css">
 
-<script type="text/javascript" src="validCheck.js"></script>
-<script type="text/javascript" src="test.js"></script>
+<script type="text/javascript" src="mar05.js"></script>
 </head>
 <body>
-	<form action="a.jsp" name="myForm" onsubmit="return check();"
+	<form action="output.jsp" name="myForm" onsubmit="return check();"
 		method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
-				<td id="titleTd" colspan="2" align="center" valign="middle">시험&nbsp;신청</td>
+				<td id="titleTd" colspan="2" align="center" valign="middle">학생&nbsp;등록</td>
 			</tr>
 			<tr>
 				<td class="td1">이름</td>
@@ -21,8 +20,8 @@
 				<!-- 기본 커서 -->
 			</tr>
 			<tr>
-				<td class="td1">나이</td>
-				<td><input name="age" class="txtInput"></td>
+				<td class="td1">학번</td>
+				<td><input name="no" class="txtInput"></td>
 			</tr>
 			<tr>
 				<td class="td1">성별</td>
@@ -30,12 +29,9 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="sex"
 					value="여자">여</td>
 			<tr>
-				<td class="td1">시험명</td>
-				<td><select name="test">
-						<option>OCJP</option>
-						<option>정보처리기사</option>
-						<option>리눅스마스터</option>
-				</select></td>
+				<td class="td1">주소</td>
+				<td><textarea class="txtArea" maxlength="100px" name="address"
+						rows="3"></textarea></td>
 			</tr>
 			<tr>
 				<td class="td1">사진</td>
@@ -43,7 +39,7 @@
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input id="btn" type="submit"
-					value="접수하기"></td>
+					value="등록하기"></td>
 			</tr>
 		</table>
 	</form>

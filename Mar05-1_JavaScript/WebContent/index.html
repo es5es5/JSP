@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+img {
+	width: 100px;
+}
+</style>
+<script type="text/javascript">
+	function test() {
+		// HTML을 동적으로 수정할 수 있음
+
+		// DOM객체 만들기
+		var hh2 = document.createElement("h2"); // <h2></h2>
+		hh2.textContent = "ㅎㅎㅎ"; // <h2>ㅎㅎㅎ</h2>
+
+		// body에 집어넣기
+		document.body.appendChild(hh2);
+
+		// f12
+	}
+	function test2() {
+		var a = document.createElement("a"); // <a></a>
+		a.textContent = "네이버로"; // <a>네이버로</a>
+		a.setAttribute("href", "http://www.naver.com"); // <a href="http://www.naver.com">네이버로</a>
+
+		var h2 = document.createElement("h2");// <h2></h2>
+		h2.appendChild(a);
+
+		document.body.appendChild(h2);
+	}
+	
+	function summonImg() {
+		var img = document.createElement("img");
+		img.setAttribute("src", "data:image/png;base64,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");
+		img.setAttribute("onclick", "go();");
+		
+		var m = document.createElement("marquee");
+		m.setAttribute("behavior", "alternate");
+		m.appendChild(img);
+
+		document.body.appendChild(m);
+	}
+	
+	function go(){
+		// 다른 페이지로 이동
+		// location.href = "http://www.naver.com";
+		
+		// 다른 페이지로 이동(새 창 열어서)
+		window.open("http://www.naver.com");
+	}
+</script>
+</head>
+<body>
+	<button onclick="test2();">ㅋㅋㅋ</button>
+	<h1 onclick="test();">ㅋㅋㅋ</h1>
+	<button onclick="summonImg();">그림 소환</button>
+</body>
+</html>
+
