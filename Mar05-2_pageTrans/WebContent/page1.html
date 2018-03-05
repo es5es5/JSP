@@ -1,10 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript">
+function gogo() {
+	var a = prompt("a"); // 입력받는 창
+	var b = prompt("b");
+	location.href="page2.jsp?a="+a+"&b="+b;
+	// window.open("");
+}
+
+function gogo2() {
+	// 자바스크립트 POST는 좀 빡셈
+	var a = prompt("a"); // 입력받는 창
+	var b = prompt("b");
+	
+	var aa = document.createElement("input");	// <input>
+	aa.setAttribute("name", "a");				// <input name="a">
+	aa.setAttribute("type", "hidden");			// <input name="a" type="hidden"> 눈에 안 보이게
+	aa.setAttribute("value", a);				// 값 넣어놓기
+												// 결론적으로
+												// <input name="a" type="hidden" value="a값">
+	
+	var bb = document.createElement("input");	
+	bb.setAttribute("name", "b");				
+	bb.setAttribute("type", "hidden");			
+	bb.setAttribute("value", b);
+	
+	// <form action="page2.jsp" method="post">
+	var f = document.createElement("form");
+	f.setAttribute("action", "page2.jsp");
+	f.setAttribute("method", "post");
+	f.appendChild(aa);
+	f.appendChild(bb);
+	document.body.appendChild(f);
+	
+	f.submit(); // type="submit" 누른 효과
+	
+}
+
+</script>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>페이지 이동하는 여러 방법들</title>
 </head>
 <body>
+	<h1>page1</h1>
+	<a href="page2.jsp?a=10&b=20">1. a로 (GET방식 요청)</a>
+	<hr>
+	2. form + input (GET/POST방식 요청)
+	<br>
+	<form action="page2.jsp" method="post">
+		a : <input name="a"><br>
+		b : <input name="b"><br>
+		<input type="submit">
+	</form>
+	
+	<hr>
+	<button onclick="gogo();">3. JavaScript로 (GET방식 요청)</button>
+	  
+	<hr>
+	<button onclick="gogo2();">4. JavaScript로 (POST방식 요청)</button>  
+	
 
 </body>
 </html>
