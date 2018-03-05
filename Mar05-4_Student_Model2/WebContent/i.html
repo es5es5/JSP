@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="stylesheet" href="c.css">
+<script type="text/javascript" src="validCheck.js"></script>
+<script type="text/javascript" src="check2.js"></script>
+</head>
+<body>
+	<form name="f" onsubmit="return check();" 
+	action="HomController" method="post" enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td id="titleTd" colspan="2" align="center">학생 등록</td>
+			</tr>
+			<tr>
+				<td class="td1">이름</td>
+				<td><input name="n" class="txtInput" autofocus="autofocus" maxlength=""></td>
+			</tr>
+			<tr>
+				<td class="td1">학번</td>
+				<td><input name="no" class="txtInput" maxlength="9"></td>
+			</tr>
+			<tr>
+				<td class="td1">주민등록번호</td>
+				<td><input name="j1" class="txtInput1" maxlength="6"> - <input name="j2" class="txtInput2" maxlength="7"></td>
+			</tr>
+			<tr>
+				<td class="td1">주소</td>
+				<td><textarea name="a" maxlength="100"></textarea> </td>
+			</tr>
+			<tr>
+				<td class="td1">사진</td>
+				<td><input type="file" name="img"></td>
+			</tr>
+			<tr>
+				<td id="btnTd" colspan="2" align="center"><input id="btn"
+					type="submit" value="결과확인"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
