@@ -15,12 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 public class HomeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
+	// Servlet(Controller)은 Tomcat이 자동으로 만들어 줌
+	// 클라이언트들 중에 한 명이 최초로 사용할 때 만들어짐
 	public HomeController() {
 		super();
-		// TODO Auto-generated constructor stub
+		System.out.println("HomeController 생성됨");
+		//http://localhost/Mar07-1_UpDown/HomeController
 	}
 
 	/**
@@ -30,7 +30,7 @@ public class HomeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		if (request.getParameterNames().hasMoreElements()) {
-			UpDownEngine.play(request, response);
+			UpDownEngine.getEngine().play(request, response);
 		} else {
 
 		}
