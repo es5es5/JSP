@@ -1,5 +1,7 @@
 package com.kwon.bb.main;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -8,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class Referee {
 	private char[] ans;
+	private String h;
 
 	private static final Referee R = new Referee();
 
@@ -70,6 +73,10 @@ public class Referee {
 			System.out.println(c);
 		}
 
+		// 시간별로 문제 바뀜
+		Date now = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("hh");
+		h = sdf.format(now);
 	}
 
 }
