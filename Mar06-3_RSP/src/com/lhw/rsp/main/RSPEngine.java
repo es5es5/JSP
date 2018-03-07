@@ -17,7 +17,7 @@ public class RSPEngine {
 		
 		if(result == 0) {
 			request.setAttribute("result", "¹«");
-		} else if (result == -1) {
+		} else if (result == -1 || result == 2) {
 			request.setAttribute("result", "½Â");
 		} else if (result == 1){
 			request.setAttribute("result", "ÆÐ");
