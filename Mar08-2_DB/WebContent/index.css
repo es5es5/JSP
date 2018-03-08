@@ -1,0 +1,30 @@
+@charset "EUC-KR";
+table{
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+}
+#titleArea{
+	font-size: 20pt;
+	height: 60px;
+	font-weight: 900;
+	color:#F4511E;
+}
+#menuArea{
+	height:50px;
+	border-top:#F4511E solid 3px;
+	border-bottom:#F4511E solid 3px;
+}
+a{
+	text-decoration: none;
+	margin-left: 20px;
+	color:black;
+	font-size: 14pt;
+	font-weight: 600;
+}
+a:hover {
+	color:#F4511E;
+}
+#contentArea{
+	padding-top: 20px;
+}
