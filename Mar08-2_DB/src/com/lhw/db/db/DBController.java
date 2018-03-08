@@ -1,12 +1,15 @@
 package com.lhw.db.db;
 
 import java.io.IOException;
+import java.sql.Connection;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lhw.db.main.DAO;
 import com.lhw.db.main.DBManager;
 
 /**
@@ -30,13 +33,7 @@ public class DBController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		try {
-			DBManager.connect();
-			System.out.println("DB연결 성공이요");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
+		DAO.test(request, response);
 		request.setAttribute("contentPage", "db.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
