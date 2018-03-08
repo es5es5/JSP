@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Mar08-1_CustomTag">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="java-output-path" value="/Mar08-1_CustomTag/build/classes"/>
+        <property name="context-root" value="Mar08-1_CustomTag"/>
+    </wb-module>
+</project-modules>
