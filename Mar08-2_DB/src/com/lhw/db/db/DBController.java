@@ -31,7 +31,7 @@ public class DBController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			DBManager.oldConnect();
+			DBManager.connect();
 			System.out.println("DB연결 성공이요");
 		} catch (Exception e) {
 			e.printStackTrace();
