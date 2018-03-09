@@ -14,7 +14,10 @@
 			<td id="titleArea" align="center">Mar08_2_DB</td>
 		</tr>
 		<tr>
-			<td id="menuArea"><a href="HomeController">È¨</a> <a href="DBController">DB¿¬°á</a>
+			<td id="menuArea">
+			<a href="HomeController">[HOME]</a>
+			<a href="DBController">[DB CONNECT]</a>
+			<a href="IController">[DB INSERT]</a>
 			</td>
 		</tr>
 		<tr>
