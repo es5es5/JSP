@@ -18,6 +18,7 @@
 			<a href="HomeController">[HOME]</a>
 			<a href="DBController">[DB CONNECT]</a>
 			<a href="IController">[DB INSERT]</a>
+			<a href="SController">[DB SELECT]</a>
 			</td>
 		</tr>
 		<tr>

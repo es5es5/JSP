@@ -1,7 +1,6 @@
-package com.lhw.db.db;
+package com.lhw.db.select;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.lhw.db.main.DAO;
 
 /**
- * Servlet implementation class DBController
+ * Servlet implementation class SController
  */
-@WebServlet("/DBController")
-public class DBController extends HttpServlet {
+@WebServlet("/SController")
+public class SController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public DBController() {
+	public SController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -31,9 +30,12 @@ public class DBController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		DAO.connectTest(request, response);
-		request.setAttribute("contentPage", "db.jsp");
+		System.out.println("doGet±îÁö´Â ¿È");
+		DAO.selectTest(request, response);
+		System.out.println("DAO±îÁö´Â ¿È");
+		request.setAttribute("contentPage", "select.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
+
 	}
 
 	/**
