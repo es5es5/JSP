@@ -1,0 +1,75 @@
+@charset "EUC-KR";
+
+#commentsArea {
+	width: 900px;
+}
+
+#commentsBBSArea {
+	height: 550px;
+}
+
+.orangeA {
+	color: #E65100;
+	font-weight: 800;
+	font-size: 14pt;
+}
+
+.orangeA:hover {
+	color: black;
+}
+
+#commentsWriteTable {
+	margin-top: 50px;
+	width: 500px;
+	color: #616161;
+	border:#616161 solid 3px;
+	box-shadow: 7px 7px 7px #FFB74D;
+	border-spacing: 0px;
+}
+
+#cwtTitle {
+	font-size: 20pt;
+	font-weight: 900;
+	height: 60px;
+	background-color: #616161;
+	color: #FFB74D;
+}
+
+.cwtTd1 {
+	height: 60px; width : 15%;
+	font-size: 15pt;
+	font-weight: 800;
+	padding-left: 10px;
+	width: 15%;
+}
+
+.cwtInput {
+	width: 90%;
+	border: #616161 solid 2px;
+	height: 40px;
+	padding-left: 7px;
+	font-size: 13pt;
+	font-family: µ¸¿ò;
+}
+
+.cwtTA {
+	width: 89.5%;
+	border: #616161 solid 2px;
+	height: 130px;
+	font-size: 13pt;
+	padding-left: 7px;
+	font-family: µ¸¿ò;
+}
+
+.cwtBtn {
+	width: 90%;
+	border: none;
+	color: #616161;
+	font-size: 18pt;
+	font-weight: 900;
+	background-color: transparent;
+}
+
+.cwtInput:focus, .cwtTA:focus {
+	border: #FFB74D solid 2px;
+}

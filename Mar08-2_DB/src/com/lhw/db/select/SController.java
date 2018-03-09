@@ -30,9 +30,7 @@ public class SController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("doGet±îÁö´Â ¿È");
 		DAO.selectTest(request, response);
-		System.out.println("DAO±îÁö´Â ¿È");
 		request.setAttribute("contentPage", "select.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 
