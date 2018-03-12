@@ -7,9 +7,8 @@
 <title>»þ¿À¹Ù¿À¿ìÀ°¸é</title>
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/comments.css">
-<link rel="stylesheet" href="css/commentswrite.css">
+<script type="text/javascript" src="js/validCheck.js"></script>
 <script type="text/javascript" src="js/commentCheck.js"></script>
-<script type="text/javascript" src="js/vaildCheck.js"></script>
 </head>
 <body>
 	<table id="menuArea">

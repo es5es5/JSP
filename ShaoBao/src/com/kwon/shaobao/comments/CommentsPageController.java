@@ -8,26 +8,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class CommentsController
+ * Servlet implementation class CommentsPageController
  */
-@WebServlet("/CommentsController")
-public class CommentsController extends HttpServlet {
+@WebServlet("/CommentsPageController")
+public class CommentsPageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CommentsController() {
+    public CommentsPageController() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CommentsDAO.getCdao().getAllComments(request, response);
-		CommentsDAO.getCdao().paging(1, request, response);
+		int p = Integer.parseInt(request.getParameter("p"));
+		CommentsDAO.getCdao().paging(p, request, response);
 		request.setAttribute("contentPage", "comments/comments.jsp");
 		request.getRequestDispatcher("jsp/index.jsp").forward(request, response);
 	}

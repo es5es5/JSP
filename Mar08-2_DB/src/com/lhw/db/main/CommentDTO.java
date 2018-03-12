@@ -1,14 +1,14 @@
 package com.lhw.db.main;
 
-public class StudentDTO {
+public class CommentDTO {
 	private String name;
 	private int age;
 
-	public StudentDTO() {
+	public CommentDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public StudentDTO(String name, int age) {
+	public CommentDTO(String name, int age) {
 		super();
 		this.name = name;
 		this.age = age;

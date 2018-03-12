@@ -1,17 +1,27 @@
-function cmtCheck(){
+function cmtCheck() {
 	var titleField = document.cmtWriteForm.title;
 	var txtField = document.cmtWriteForm.txt;
 
-	if(isEmpty(titleField)){
-		alert("Îì±Î°ù Îã§Ïãú");
-		
+	if (isEmpty(titleField)) {
+		alert("¡¶∏Ò »Æ¿Œ");
 		titleField.focus();
 		return false;
-	}else if(isEmpty(txtField)){
-		alert("Îì±Î°ù Îã§Ïãú");
+	} else if (isEmpty(txtField)) {
+		alert("≥ªøÎ »Æ¿Œ");
 		txtField.focus();
 		return false;
 	}
-	
+
+	return true;
+}
+function searchCmtCheck() {
+	var searchField = document.searchForm.s;
+
+	if (isEmpty(searchField)) {
+		alert("¡¶∏Ò »Æ¿Œ");
+		searchField.focus();
+		return false;
+	}
+
 	return true;
 }

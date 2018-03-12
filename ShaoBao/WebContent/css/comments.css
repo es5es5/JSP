@@ -1,11 +1,7 @@
 @charset "EUC-KR";
 
 #commentsArea {
-	width: 900px;
-}
-
-#commentsBBSArea {
-	height: 550px;
+	width: 800px;
 }
 
 .orangeA {
@@ -22,7 +18,7 @@
 	margin-top: 50px;
 	width: 500px;
 	color: #616161;
-	border:#616161 solid 3px;
+	border: #616161 solid 3px;
 	box-shadow: 7px 7px 7px #FFB74D;
 	border-spacing: 0px;
 }
@@ -36,7 +32,8 @@
 }
 
 .cwtTd1 {
-	height: 60px; width : 15%;
+	height: 60px;
+	width: 15%;
 	font-size: 15pt;
 	font-weight: 800;
 	padding-left: 10px;
@@ -72,4 +69,41 @@
 
 .cwtInput:focus, .cwtTA:focus {
 	border: #FFB74D solid 2px;
+}
+
+#commentsTable {
+	width: 750px;
+	background-color: #616161;
+	color: #FFB74D;
+	font-weight: 800;
+	border-spacing: 0px;
+	box-shadow: 5px 5px 5px #FFB74D;
+	margin-bottom: 10px;
+}
+#commentsTable tr td{
+	padding-left: 10px;
+}
+.commentsTableData{
+	font-weight: 500;
+	background-color: white;
+	color:black;
+	height:35px;
+}
+.commentsTableData:hover{
+	background-color: #FFE0B2;
+}
+.pageA{
+	color:#616161;
+	font-weight: 800;
+}
+.pageA:hover {
+	color:#FFB74D;
+}
+#searchCmtInput{
+	border:#616161 solid 2px;
+}
+#searchCmtBtn{
+	border:none;
+	background-color: #FFB74D;
+	color:#616161;
 }

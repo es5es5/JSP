@@ -13,38 +13,51 @@ import javax.sql.DataSource;
 
 public class DBManager {
 
-	// 구닥다리 방식
-	// DB서버와 연결 해달라고 하면 그제서야 연결하려고 뻘짓 중
-	// Java에서 사용함..
-	public static Connection oldConnect() throws ClassNotFoundException, SQLException {
-		// OracleDriver 클래스 지정
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-
-		// DB서버 주소
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-
-		return DriverManager.getConnection(url, "lhw", "lhw");
-	}
-
-	// 미리 연결을 몇 개 만들어 놓고
-	// DB서버와 연결 해달라고 하면 만들어 놓는 연결을 주는 시스템
+	// 미리 연결을 몇개 만들어 놓고
+	// DB서버와 연결 해달라고 하면 만들어 놓은 연결을 주는 시스템
 	// ConnectionPool
-	// TomCat과 JSP 있을 경우만 사용 가능
 	public static Connection connect() throws NamingException, SQLException {
 
 		// context.xml
 		Context ctx = new InitialContext();
 
 		// 튜브 대여소(Connection 대여소)
-		DataSource ds = (DataSource) ctx.lookup("java:comp/env/lhwPool");
+		DataSource ds = (DataSource) ctx.lookup("java:comp/env/kwonPool");
 
 		return ds.getConnection();
 	}
 
+	// DB서버와 연결 해달라고 하면 그 때 연결을 맺어주는 시스템
+	public static Connection oldConnect() throws ClassNotFoundException, SQLException {
+		// OracleDriver클래스 지정
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+
+		// DB서버 주소
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+
+		return DriverManager.getConnection(url, "kwon", "kwon");
+	}
+
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
-		try {rs.close();} catch (Exception e) {}
-		try {pstmt.close();} catch (Exception e) {}
-		try {con.close();} catch (Exception e) {}
+
+		try {
+			rs.close();
+		} catch (Exception e) {
+
+		}
+
+		try {
+			pstmt.close();
+		} catch (Exception e) {
+
+		}
+
+		try {
+			con.close();
+		} catch (Exception e) {
+
+		}
 
 	}
+
 }

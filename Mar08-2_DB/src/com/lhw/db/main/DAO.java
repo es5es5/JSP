@@ -32,11 +32,11 @@ public class DAO {
 			rs = pstmt.executeQuery();
 
 			// ResultSet -> ArrayList<Student>
-			ArrayList<StudentDTO> students = new ArrayList<>();
-			StudentDTO s = null;
+			ArrayList<CommentDTO> students = new ArrayList<>();
+			CommentDTO s = null;
 
 			while (rs.next()) {
-				s = new StudentDTO();
+				s = new CommentDTO();
 				s.setName(rs.getString("s_name"));
 				s.setAge(rs.getInt("s_age"));
 				students.add(s);
