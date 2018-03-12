@@ -44,6 +44,62 @@ public class CommentsDAO {
 
 		request.setAttribute("comments", comments2);
 	}
+	
+	public void searchComments(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = DBManager.connect();
+			
+			String s = request.getParameter("s");
+
+			// sql
+			String sql = "select * from shaobao_comments where sc_title like '%'||?||'%' order by sc_date";
+
+			pstmt = con.prepareStatement(sql);
+			
+			// ? 채우기
+			pstmt.setString(1, s);
+			
+			rs = pstmt.executeQuery();
+
+			comments = new ArrayList<>();
+			Comment c = null;
+			while (rs.next()) {
+				c = new Comment();
+				c.setSc_no(rs.getInt("sc_no"));
+				c.setSc_title(rs.getString("sc_title"));
+				c.setSc_txt(rs.getString("sc_txt"));
+				c.setSc_date(rs.getDate("sc_date"));
+				comments.add(c);
+			}
+
+			if (comments.size() == 0) {
+				request.setAttribute("r", "아무 데이터 없음");
+
+				comments.add(null);
+				comments.add(null);
+				comments.add(null);
+			}
+
+			// request.setAttribute("comments", comments);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+
+			request.setAttribute("r", "DB서버오류");
+
+			comments = new ArrayList<>();
+			comments.add(null);
+			comments.add(null);
+			comments.add(null);
+			// request.setAttribute("comments", comments);
+
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
 
 	public void getAllComments(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
@@ -124,5 +180,4 @@ public class CommentsDAO {
 			DBManager.close(con, pstmt, null);
 		}
 	}
-
 }

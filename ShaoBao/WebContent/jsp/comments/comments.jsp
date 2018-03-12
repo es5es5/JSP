@@ -44,7 +44,7 @@
 		</tr>
 		<tr>
 			<td align="center">
-				<form action="" name="searchForm" onsubmit="return searchCmtCheck();">
+				<form action="CommentsSearchController" name="searchForm" onsubmit="return searchCmtCheck();">
 					<input id="searchCmtInput" name="s">
 					<input id="searchBtn" type="submit" value="°Ë»ö">
 				</form>
