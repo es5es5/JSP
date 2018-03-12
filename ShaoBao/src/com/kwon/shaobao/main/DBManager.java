@@ -22,7 +22,7 @@ public class DBManager {
 		Context ctx = new InitialContext();
 
 		// 튜브 대여소(Connection 대여소)
-		DataSource ds = (DataSource) ctx.lookup("java:comp/env/kwonPool");
+		DataSource ds = (DataSource) ctx.lookup("java:comp/env/lhwPool");
 
 		return ds.getConnection();
 	}
@@ -35,7 +35,7 @@ public class DBManager {
 		// DB서버 주소
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 
-		return DriverManager.getConnection(url, "kwon", "kwon");
+		return DriverManager.getConnection(url, "lhw", "lhw");
 	}
 
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {

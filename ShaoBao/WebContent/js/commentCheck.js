@@ -1,6 +1,15 @@
+function delCmtCheck(sc_no){
+	var ok = confirm("진짜?");
+	
+	if(ok){
+		location.href 
+			= "CommentsDeleteController?sc_no=" + sc_no;
+	}
+}
+
 function cmtCheck() {
-	var titleField = document.cmtWriteForm.title;
-	var txtField = document.cmtWriteForm.txt;
+	var titleField = document.cmtWriteForm.sc_title;
+	var txtField = document.cmtWriteForm.sc_txt;
 
 	if (isEmpty(titleField)) {
 		alert("제목 확인");
