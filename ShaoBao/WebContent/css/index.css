@@ -8,7 +8,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 }
-input, textarea{
+input, textarea, button{
 	outline: none;
 }
 textarea{

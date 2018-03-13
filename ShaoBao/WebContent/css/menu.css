@@ -1,0 +1,73 @@
+@charset "EUC-KR";
+#sbMenuArea{
+	width:800px;
+}
+#menuRegTbl{
+	background-color: #616161;
+	width: 500px;
+	color: #FFB74D;
+	font-weight: 900;
+	font-size: 13pt;
+}
+.mrTd1{
+	width:80px;
+	padding-left: 10px;
+	height: 30px;
+}
+.mrInput{
+	border:none;
+	height: 27px;
+	padding-left: 5px;
+	width: 97%;
+}
+.mrTA{
+	border:none;
+	height:54px;
+	padding-left: 5px;
+	width: 96.5%;
+}
+.mrBtn{
+	border:none;
+	color: #FFB74D;
+	font-weight: 900;
+	font-size: 13pt;
+	background-color: transparent;
+}
+.menuItem{
+	width: 600px;
+	border-spacing: 0px;
+	font-size: 13pt;
+	border:#616161 solid 2px;
+	margin-bottom: 20px;
+	box-shadow: 5px 5px 5px #FFB74D;
+}
+.menuItem:hover{
+	background-color: #FFE0B2;
+}
+.menuImg{
+	max-width: 100px;
+}
+.menuImgTd{
+	width: 110px;
+	font-size: 14pt;
+}
+.menuNameTd, .menuImgTd{
+	background-color: #616161;
+	color:#FFB74D;
+}
+.menuNameTd{
+	height: 40px;
+	font-weight: 900;
+}
+.menuBtn{
+	background-color: #616161;
+	color:#FFB74D;
+	font-size: 13pt;
+	font-weight: 900;
+	border:none;
+	margin:5px; 
+}
+.menuPageA{
+	font-size: 20pt;
+	font-weight: 900;
+}

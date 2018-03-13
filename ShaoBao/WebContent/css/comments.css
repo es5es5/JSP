@@ -100,10 +100,59 @@
 	color:#FFB74D;
 }
 #searchCmtInput{
-	border:#616161 solid 2px;
+	border:none;
+	border-bottom:#616161 solid 2px;
+	height: 20px;
 }
 #searchCmtBtn{
+	height:26px;
 	border:none;
-	background-color: #FFB74D;
+	background-color:transparent;
 	color:#616161;
+}
+#cdTable{
+	width: 700px;
+	border-spacing:0px;
+	border:#616161 solid 2px;
+}
+.cdTd1{
+	width:15%;
+	padding-left:10px;
+	background-color: #616161;
+	color:#FFB74D;
+	height: 50px;
+	font-size: 15pt;
+	font-weight: 800;
+}
+.cdTd2{
+	padding-left:10px;
+	color:#616161;
+	font-size: 15pt;
+	font-weight: 500;
+}
+.cdTd3{
+	color:#FFB74D;
+	background-color: #616161;
+	height: 50px;
+}
+.cdBtn{
+	background-color: transparent;
+	color:#FFB74D;
+	font-weight: 900;
+	font-size: 15pt;
+	border: none;
+}
+.cdI{
+	border:none;
+	color:#616161;
+	font-size: 15pt;
+	font-weight: 500;
+}
+.cdTA{
+	border:none;
+	color:#616161;
+	font-size: 15pt;
+	font-weight: 500;
+	width:80%;
+	height:350px;
 }

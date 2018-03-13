@@ -1,4 +1,4 @@
-package com.kwon.shaobao.comments;
+package com.kwon.shaobao.menu;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class CommentsSearchController
+ * Servlet implementation class MenuSearchController
  */
-@WebServlet("/CommentsSearchController")
-public class CommentsSearchController extends HttpServlet {
+@WebServlet("/MenuSearchController")
+public class MenuSearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CommentsSearchController() {
+    public MenuSearchController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,9 +26,9 @@ public class CommentsSearchController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		CommentsDAO.getCdao().searchComments(request, response);
-		CommentsDAO.getCdao().paging(1, request, response);
-		request.setAttribute("contentPage", "comments/comments.jsp");
+		MenuDAO.getMdao().searchMenu(request, response);
+		MenuDAO.getMdao().paging(1, request, response);
+		request.setAttribute("contentPage", "menu/menu.jsp");
 		request.getRequestDispatcher("jsp/index.jsp").forward(request, response);
 	}
 
@@ -41,6 +41,3 @@ public class CommentsSearchController extends HttpServlet {
 	}
 
 }
-
-
-

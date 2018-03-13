@@ -7,8 +7,10 @@
 <title>샤오바오우육면</title>
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/comments.css">
+<link rel="stylesheet" href="css/menu.css">
 <script type="text/javascript" src="js/validCheck.js"></script>
 <script type="text/javascript" src="js/commentCheck.js"></script>
+<script type="text/javascript" src="js/mrCheck.js"></script>
 </head>
 <body>
 	<table id="menuArea">
@@ -16,16 +18,16 @@
 			<td align="center">
 				<table id="menuArea2">
 					<tr>
-						<td align="center">
-							<a class="siteMenu" href="">메뉴1</a>
+						<td align="center" style="width:25%;">
+							<a class="siteMenu" href="">?</a>
 						</td>
-						<td align="center">
-							<a class="siteMenu" href="">메뉴2</a>
+						<td align="center" style="width:25%;">
+							<a class="siteMenu" href="MenuController">메뉴</a>
 						</td>
-						<td align="center">
-							<a class="siteMenu" href="">메뉴3</a>
+						<td align="center" style="width:25%;">
+							<a class="siteMenu" href="">?</a>
 						</td>
-						<td align="center">
+						<td align="center" style="width:25%;">
 							<a class="siteMenu" href="CommentsController">후기</a>
 						</td>
 					</tr>
