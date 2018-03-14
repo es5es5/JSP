@@ -1,4 +1,4 @@
-package com.kwon.shaobao.menu;
+package com.kwon.pt.main;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MenuDeleteController
+ * Servlet implementation class FController
  */
-@WebServlet("/MenuDeleteController")
-public class MenuDeleteController extends HttpServlet {
+@WebServlet("/FController")
+public class FController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MenuDeleteController() {
+    public FController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,10 +26,8 @@ public class MenuDeleteController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MenuDAO.getMdao().delete(request, response);
-		MenuDAO.getMdao().delete(request, response);
-		MenuDAO.getMdao().paging(1, request, response);
-		
+		EModel.test2(request, response);
+		request.getRequestDispatcher("GView.jsp").forward(request, response);
 	}
 
 	/**

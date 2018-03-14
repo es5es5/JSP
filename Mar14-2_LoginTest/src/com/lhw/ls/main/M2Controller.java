@@ -1,4 +1,4 @@
-package com.kwon.shaobao.menu;
+package com.lhw.ls.main;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class MenuDeleteController
+ * Servlet implementation class M2Controller
  */
-@WebServlet("/MenuDeleteController")
-public class MenuDeleteController extends HttpServlet {
+@WebServlet("/M2Controller")
+public class M2Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MenuDeleteController() {
+    public M2Controller() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,10 +26,9 @@ public class MenuDeleteController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MenuDAO.getMdao().delete(request, response);
-		MenuDAO.getMdao().delete(request, response);
-		MenuDAO.getMdao().paging(1, request, response);
-		
+		AccountDAO.getAdao().loginCheck(request, response);
+		request.setAttribute("contentPage", "m2.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	/**
