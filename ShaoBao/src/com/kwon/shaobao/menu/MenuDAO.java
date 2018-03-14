@@ -26,6 +26,61 @@ public class MenuDAO {
 		return MDAO;
 	}
 	
+	public void delete(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBManager.connect();
+
+			int sm_no = Integer.parseInt(request.getParameter("sm_no"));
+
+			String sql = "delete from shaobao_menu where sm_no=?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, sm_no);
+
+			if (pstmt.executeUpdate() == 1) {
+				request.setAttribute("r", "메뉴 삭제 성공");
+			} else {
+				request.setAttribute("r", "메뉴 삭제 실패");
+			}
+		} catch (Exception e) {
+			request.setAttribute("r", "메뉴 삭제 실패");
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+	
+	public void update(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBManager.connect();
+
+			int sm_no = Integer.parseInt(request.getParameter("sm_no"));
+			String sm_price = request.getParameter("sm_price");
+			
+
+			String sql = "update shaobao_menu " + "set sm_price=? where sm_no=?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, sm_price);
+			pstmt.setInt(2, sm_no);
+
+			if (pstmt.executeUpdate() == 1) {
+				request.setAttribute("r", "가격 수정 성공");
+			} else {
+				request.setAttribute("r", "가격 수정 실패");
+			}
+		} catch (Exception e) {
+			request.setAttribute("r", "가격 수정 실패");
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+	
 	public void searchMenu(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
 		PreparedStatement pstmt = null;

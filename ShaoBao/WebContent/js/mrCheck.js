@@ -1,7 +1,22 @@
-function searchMenu(n){
-	var s = prompt("검색어", n);
+function deleteMenu(n){
+	var ok = confirm("진짜 지워?");
 	
-	location.href = "MenuSearchController?sm_name="+s;
+	if(ok){
+		location.href = "MenuDeleteController?sm_no="+n;
+	}
+}
+
+function updateMenu(p, n) {
+	var p2 = prompt("수정할 가격", p);
+	if (p2 != null && p2 != "") {
+		location.href = "MenuUpdateController?sm_price=" + p2 + "&sm_no=" + n;
+	}
+}
+
+function searchMenu(n) {
+	var s = prompt("검색어", n);
+
+	location.href = "MenuSearchController?sm_name=" + s;
 }
 
 function mrCheck() {
@@ -29,7 +44,7 @@ function mrCheck() {
 		alert("설명 확인");
 		descField.focus();
 		return false;
-	} 
+	}
 
 	return true;
 }
