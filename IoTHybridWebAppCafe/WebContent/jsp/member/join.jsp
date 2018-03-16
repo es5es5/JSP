@@ -17,7 +17,7 @@
 			</tr>
 			<tr>
 				<td class="joinTblTd1">id</td>
-				<td><input name="im_id" maxlength="10" autofocus="autofocus" class="joinInput"></td>
+				<td><input name="im_id" maxlength="10" autofocus="autofocus" class="joinInput" autocomplete="off"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">pw</td>

@@ -1,15 +1,15 @@
 package com.lhw.ls.main;
 
-public class Account {
+public class Member {
 	private String l_id;
 	private String l_pw;
 	private String l_name;
 
-	public Account() {
+	public Member() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Account(String l_id, String l_pw, String l_name) {
+	public Member(String l_id, String l_pw, String l_name) {
 		super();
 		this.l_id = l_id;
 		this.l_pw = l_pw;

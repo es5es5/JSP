@@ -24,7 +24,7 @@ public class AccountDAO {
 	// 로그인이 풀린 상태면 false
 	public boolean loginCheck(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession hs = request.getSession();
-		Account a = (Account) hs.getAttribute("accountInfo");
+		Member a = (Member) hs.getAttribute("accountInfo");
 		
 		if ( a== null) {
 			request.setAttribute("loginPage", "login.jsp");
@@ -56,7 +56,7 @@ public class AccountDAO {
 			if(rs.next()) {
 				String db_pw = rs.getString("l_pw");
 				if (l_pw.equals(db_pw)) {
-					Account a = new Account();
+					Member a = new Member();
 					a.setL_id(rs.getString("l_id"));
 					a.setL_pw(rs.getString("l_pw"));
 					a.setL_name(rs.getString("l_name"));

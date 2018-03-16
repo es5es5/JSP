@@ -8,11 +8,11 @@
 </head>
 <body> 
 	<table id="loginTbl">
-		<form action="" method="post" name="loginForm" onsubmit="return loginCheck();">
+		<form action="MemberLoginController" method="post" name="loginForm" onsubmit="return loginCheck();" method="post">
 		<tr><td style="height:10px;"></td></tr>
 		<tr>
 			<td class="loginTd1" align="center">id</td>
-			<td><input name="im_id" maxlength="10" class="loginInput"></td>
+			<td><input name="im_id" value="${cookie.lastLoginID.value }" maxlength="10" class="loginInput" autocomplete="off"></td>
 		</tr>
 		<tr>
 			<td class="loginTd1" align="center">pw</td>
@@ -22,7 +22,7 @@
 		<tr>
 			<td class="loginTd1"></td>
 			<td>
-				<input name="im_save" type="checkbox" value="ok">로그인 상태 유지</td>
+				<input name="im_autologin" type="checkbox" value="ok">로그인 상태 유지</td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
