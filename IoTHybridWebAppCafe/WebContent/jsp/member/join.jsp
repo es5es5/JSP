@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>회원가입</h2>
+	<h2>회원 가입 정보</h2>
 	<br><br><br>
 	<form action="" name="joinForm" onsubmit="return joinCheck();" method="post" enctype="multipart/form-data">
 		<table id="joinTbl">

@@ -1,10 +1,14 @@
-function goJoin(){
+function goJoin() {
 	location.href = "MemberJoinController";
 }
 
-function logout(){
+function logout() {
 	var ok = confirm("ÁøÂ¥?");
-	if(ok) {
+	if (ok) {
 		location.href = "MemberLogoutController";
 	}
+}
+
+function goUpdateMember() {
+	location.href = "MemberUpdateController";
 }

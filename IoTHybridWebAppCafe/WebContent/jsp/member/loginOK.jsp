@@ -21,7 +21,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<button class="loginOKBtn" onclick="logout();">로그아웃</button>&nbsp;
-				<button class="loginOKBtn">정보수정</button>&nbsp;
+				<button class="loginOKBtn" onclick="goUpdateMember();">정보수정</button>&nbsp;
 				<button class="loginOKBtn">탈퇴</button>
 			</td>
 		</tr>
