@@ -15,29 +15,27 @@ import com.kwon.ihwac.main.DateManager;
 @WebServlet("/MemberJoinController")
 public class MemberJoinController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public MemberJoinController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public MemberJoinController() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DateManager.getCurrentYear(request, response);
 		MemberDAO.getMdao().loginCheck(request, response);
 		request.setAttribute("contentPage", "member/join.jsp");
 		request.getRequestDispatcher("jsp/index.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MemberDAO.getMdao().join(request, response);
 		MemberDAO.getMdao().loginCheck(request, response);
 		request.setAttribute("contentPage", "home.jsp");
@@ -45,3 +43,10 @@ public class MemberJoinController extends HttpServlet {
 	}
 
 }
+
+
+
+
+
+
+

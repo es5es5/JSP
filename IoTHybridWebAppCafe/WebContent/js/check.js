@@ -1,4 +1,36 @@
-function updateCheck(){
+function writeReplCheck(writeForm){
+	// submit을 수행한 form속의 isr_txt
+	var txtField = writeForm.isr_txt;
+	
+	if(isEmpty(txtField)){
+		alert("내용 확인");
+		txtField.focus();
+		return false;
+	}
+	return true;
+}
+function snsSearchCheck(){
+	// 이 문서에서 이름이 snsSearchForm인 form속의 is_txt
+	var txtField = document.snsSearchForm.is_txt;
+	if (isEmpty(txtField)) {
+		alert("입력 확인");
+		txtField.value = "";
+		txtField.focus();
+		return false;
+	}
+	return true;
+}
+function snsWriteCheck() {
+	var txtField = document.snsWriteForm.is_txt;
+	if (isEmpty(txtField)) {
+		alert("입력 확인");
+		txtField.value = "";
+		txtField.focus();
+		return false;
+	}
+	return true;
+} 
+function updateCheck() {
 	var idField = document.updateForm.im_id;
 	var pwField = document.updateForm.im_pw;
 	var pwChkField = document.updateForm.im_pwChk;
@@ -30,12 +62,10 @@ function updateCheck(){
 		addrField.value = "";
 		addrField.focus();
 		return false;
-	} else if(isEmpty(imgField)){
+	} else if (isEmpty(imgField)) {
 		return true;
-	} else if (isNotType(imgField, ".png") 
-					&& isNotType(imgField, ".gif") 
-					&& isNotType(imgField, ".jpg")
-					&& isNotType(imgField, ".bmp")) {
+	} else if (isNotType(imgField, ".png") && isNotType(imgField, ".gif")
+			&& isNotType(imgField, ".jpg") && isNotType(imgField, ".bmp")) {
 		alert("사진 똑바로");
 		imgField.value = "";
 		imgField.focus();
@@ -76,10 +106,9 @@ function joinCheck() {
 		addrField.focus();
 		return false;
 	} else if (isEmpty(imgField)
-			|| (isNotType(imgField, ".png") 
-					&& isNotType(imgField, ".gif") 
-					&& isNotType(imgField, ".jpg")
-					&& isNotType(imgField, ".bmp"))) {
+			|| (isNotType(imgField, ".png") && isNotType(imgField, ".gif")
+					&& isNotType(imgField, ".jpg") && isNotType(imgField,
+					".bmp"))) {
 		alert("사진 똑바로");
 		imgField.value = "";
 		imgField.focus();

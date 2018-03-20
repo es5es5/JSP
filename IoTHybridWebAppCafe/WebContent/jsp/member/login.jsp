@@ -8,7 +8,8 @@
 </head>
 <body> 
 	<table id="loginTbl">
-		<form action="MemberLoginController" method="post" name="loginForm" onsubmit="return loginCheck();" method="post">
+		<form action="MemberLoginController" method="post" 
+		name="loginForm" onsubmit="return loginCheck();">
 		<tr><td style="height:10px;"></td></tr>
 		<tr>
 			<td class="loginTd1" align="center">id</td>
@@ -22,7 +23,7 @@
 		<tr>
 			<td class="loginTd1"></td>
 			<td>
-				<input name="im_autologin" type="checkbox" value="ok">로그인 상태 유지</td>
+				<input name="im_autologin" type="checkbox">로그인 상태 유지</td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">

@@ -8,9 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>회원 가입 정보</h2>
+	<h2>회원가입</h2>
 	<br><br><br>
-	<form action="" name="joinForm" onsubmit="return joinCheck();" method="post" enctype="multipart/form-data">
+	<form action="MemberJoinController"
+		method="post" enctype="multipart/form-data" 
+	name="joinForm" onsubmit="return joinCheck();">
 		<table id="joinTbl">
 			<tr>
 				<td colspan="2" class="joinTblBlank"></td>
@@ -21,19 +23,19 @@
 			</tr>
 			<tr>
 				<td class="joinTblTd1">pw</td>
-				<td><input name="im_pw" maxlength="10" class="joinInput" type="password" placeholder="대소문자+특수문자+10글자이하"></td>
+				<td><input name="im_pw" type="password" maxlength="10" class="joinInput" placeholder="영문 대소문자, 숫자 조합"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">pw확인</td>
-				<td><input name="im_pwChk" maxlength="10" class="joinInput" type="password"></td>
+				<td><input name="im_pwChk" type="password" maxlength="10" class="joinInput"></td>
 			</tr>
-			<tr> 
+			<tr>
 				<td class="joinTblTd1">이름</td>
-				<td><input name="im_name" maxlength="10" class="joinInput"></td>
+				<td><input name="im_name" maxlength="10" class="joinInput" autocomplete="off"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">거주지</td>
-				<td><input name="im_addr" maxlength="10" class="joinInput"></td>
+				<td><input name="im_addr" maxlength="10" class="joinInput" autocomplete="off"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">생일</td>

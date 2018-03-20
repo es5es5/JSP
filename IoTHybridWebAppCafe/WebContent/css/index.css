@@ -12,6 +12,9 @@ table{
 input, button, textarea, select{
 	outline: none;
 }
+textarea{
+	resize: none;
+}
 h2{
 	color:#0277BD;
 }
@@ -43,7 +46,8 @@ h2{
 	color:white;
 	font-size: 13pt;
 	font-weight: 700;
-	margin-left: 15px;
+	margin-left: 20px; 
+	margin-right: 20px;
 }
 .siteMenu:hover{
 	color:red;

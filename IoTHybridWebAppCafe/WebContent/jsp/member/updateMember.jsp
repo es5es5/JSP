@@ -2,50 +2,52 @@
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>회원 정보 수정</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<h2>회원 정보 수정</h2>
 	<br>
 	<br>
 	<br>
-	<form action="MemberUpdateController" name="updateForm"
-		onsubmit="return updateCheck();" method="post"
-		enctype="multipart/form-data">
+	<form action="MemberUpdateController" method="post"
+		enctype="multipart/form-data" name="updateForm"
+		onsubmit="return updateCheck();">
 		<table id="joinTbl">
 			<tr>
 				<td colspan="2" class="joinTblBlank"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">id</td>
-				<td><input name="im_id" readonly="readonly" maxlength="10"
-					autofocus="autofocus" class="joinInput" autocomplete="off"
-					value="${sessionScope.loginMember.im_id }"></td>
+				<td><input
+					readonly="readonly"
+				 	value="${sessionScope.loginMember.im_id }"
+					name="im_id" maxlength="10" class="joinInput"
+					autocomplete="off"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">pw</td>
-				<td><input name="im_pw" maxlength="10" class="joinInput"
-					type="password" value="${sessionScope.loginMember.im_pw }"></td>
+				<td><input value="${sessionScope.loginMember.im_pw }"
+					name="im_pw" type="password" maxlength="10" class="joinInput"
+					placeholder="영문 대소문자, 숫자 조합"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">pw확인</td>
-				<td><input name="im_pwChk" maxlength="10" class="joinInput"
-					type="password" value="${sessionScope.loginMember.im_pw }"></td>
+				<td><input value="${sessionScope.loginMember.im_pw }"
+					name="im_pwChk" type="password" maxlength="10" class="joinInput"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">이름</td>
-				<td><input name="im_name" maxlength="10" class="joinInput"
-					value="${sessionScope.loginMember.im_name }"></td>
+				<td><input value="${sessionScope.loginMember.im_name }"
+					name="im_name" maxlength="10" class="joinInput" autocomplete="off"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">거주지</td>
-				<td><input name="im_addr" maxlength="10" class="joinInput"
-					value="${sessionScope.loginMember.im_addr }"></td>
+				<td><input value="${sessionScope.loginMember.im_addr }"
+					name="im_addr" maxlength="10" class="joinInput" autocomplete="off"></td>
 			</tr>
 			<tr>
 				<td class="joinTblTd1">생일</td>
@@ -77,8 +79,9 @@
 			</tr>
 			<tr>
 				<td class="joinTblTd1">사진</td>
-				<td><img src="etc/${sessionScope.loginMember.im_img }"> <input
-					name="im_img" type="file"></td>
+				<td>
+					<img class="loginOKImg" src="etc/${sessionScope.loginMember.im_img }">&nbsp;&nbsp;
+				<input name="im_img" type="file"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><input id="joinBtn"

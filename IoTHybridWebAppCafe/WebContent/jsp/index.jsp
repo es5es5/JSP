@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +8,8 @@
 <title>사물인터넷기반 하이브리드 웹앱 개발자 양성 과정 카페</title>
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/member.css">
+<link rel="stylesheet" href="css/sns.css">
+<link rel="stylesheet" href="css/community.css">
 <script type="text/javascript" src="js/validCheck.js"></script>
 <script type="text/javascript" src="js/check.js"></script>
 <script type="text/javascript" src="js/go.js"></script>
@@ -21,8 +24,12 @@
 								웹앱 개발자 양성 과정 카페</a></td>
 					</tr>
 					<tr>
-						<td id="siteMenuArea"><a href="" class="siteMenu">메뉴1</a> <a
-							href="" class="siteMenu">메뉴2</a> <a href="" class="siteMenu">메뉴3</a>
+						<td id="siteMenuArea">
+							<a href="SNSController" class="siteMenu">SNS</a>
+							<a href="" class="siteMenu">메뉴2</a>
+							<c:if test="${sessionScope.loginMember != null }">
+							<a href="CommunityController" class="siteMenu">커뮤니티</a>
+							</c:if>
 						</td>
 					</tr>
 					<tr>

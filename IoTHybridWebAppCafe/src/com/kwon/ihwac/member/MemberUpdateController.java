@@ -39,20 +39,24 @@ public class MemberUpdateController extends HttpServlet {
 		request.getRequestDispatcher("jsp/index.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		if (MemberDAO.getMdao().loginCheck(request, response)) {
 			MemberDAO.getMdao().update(request, response);
 			DateManager.getCurrentYear(request, response);
-			request.setAttribute("contentPage", "home.jsp");
+			request.setAttribute("contentPage", "member/updateMember.jsp");
 		} else {
 			request.setAttribute("contentPage", "home.jsp");
 		}
 		request.getRequestDispatcher("jsp/index.jsp").forward(request, response);
+
 	}
 
 }
+
+
+
+
+
+

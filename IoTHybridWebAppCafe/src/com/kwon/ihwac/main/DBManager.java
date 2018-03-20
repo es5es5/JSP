@@ -35,7 +35,7 @@ public class DBManager {
 		// DB서버 주소
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 
-		return DriverManager.getConnection(url, "lhw", "lhw");
+		return DriverManager.getConnection(url, "kwon", "kwon");
 	}
 
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {

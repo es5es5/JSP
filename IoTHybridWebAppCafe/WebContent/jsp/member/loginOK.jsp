@@ -9,7 +9,7 @@
 <body>
 	<table id="loginOKTbl">
 		<tr>
-			<td rowspan="2" id="loginOKImgTd" align="center"><img id="loginOKImg"
+			<td rowspan="2" id="loginOKImgTd" align="center"><img class="loginOKImg"
 				src="etc/${sessionScope.loginMember.im_img }"></td>
 			<td id="loginOKID">${sessionScope.loginMember.im_id }</td>
 		</tr>
@@ -19,12 +19,22 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center">
-				<button class="loginOKBtn" onclick="logout();">·Î±×¾Æ¿ô</button>&nbsp;
-				<button class="loginOKBtn" onclick="goUpdateMember();">Á¤º¸¼öÁ¤</button>&nbsp;
-				<button class="loginOKBtn">Å»Åð</button>
+			<td colspan="2" align="center"> 
+				<button onclick="logout();" class="loginOKBtn">·Î±×¾Æ¿ô</button>&nbsp;
+				<button onclick="goUpdateMember();" class="loginOKBtn">Á¤º¸¼öÁ¤</button>&nbsp;
+				<button onclick="bye();" class="loginOKBtn">Å»Åð</button>
 			</td>
 		</tr>
+		<tr>
+			<td colspan="2" align="right" style="color:yellow;">${r }&nbsp;&nbsp;</td> 
+		</tr>	
 	</table>
 </body>
 </html>
+
+
+
+
+
+
+

@@ -9,7 +9,7 @@ public class Member {
 	private String im_addr;
 	private Date im_birthday;
 	private String im_img;
-	
+
 	public Member() {
 		// TODO Auto-generated constructor stub
 	}
@@ -71,6 +71,5 @@ public class Member {
 	public void setIm_img(String im_img) {
 		this.im_img = im_img;
 	}
-	
-	
+
 }

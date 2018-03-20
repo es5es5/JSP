@@ -37,6 +37,7 @@ public class MemberDAO {
 				if (cookie.getName().equals("ihwacAutoLoginID")) {
 					// 쿠키에 들어있는 값이 있으면
 					if (cookie.getValue() != null) {
+
 						Connection con = null;
 						PreparedStatement pstmt = null;
 						ResultSet rs = null;
@@ -55,6 +56,7 @@ public class MemberDAO {
 							if (rs.next()) {
 								String db_pw = rs.getString("im_pw");
 
+								// ctrl + shift + f
 								Cookie lastLoginID = new Cookie("lastLoginID", im_id);
 								lastLoginID.setMaxAge(86400);
 								response.addCookie(lastLoginID);
@@ -69,7 +71,7 @@ public class MemberDAO {
 
 								HttpSession hs = request.getSession();
 								hs.setAttribute("loginMember", m);
-								hs.setMaxInactiveInterval(10); //
+								hs.setMaxInactiveInterval(15 * 60); //
 
 								Cookie autoLoginID = new Cookie("ihwacAutoLoginID", im_id);
 								autoLoginID.setMaxAge(86400);
@@ -92,6 +94,44 @@ public class MemberDAO {
 		}
 	}
 
+	public void bye(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBManager.connect();
+
+			HttpSession hs = request.getSession();
+			Member m2 = (Member) hs.getAttribute("loginMember");
+
+			String im_id = m2.getIm_id();
+			String im_pw = request.getParameter("im_pw");
+
+			if (im_pw.equals(m2.getIm_pw())) {
+				String sql = "delete from ihwac_member where im_id=?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, im_id);
+				if (pstmt.executeUpdate() == 1) {
+					String path = request.getServletContext().getRealPath("etc");
+					String oldImg = m2.getIm_img();
+					oldImg = URLDecoder.decode(oldImg, "euc-kr");
+					File oldFile = new File(path + "/" + oldImg);
+					oldFile.delete();
+
+					logout(request, response);
+
+					request.setAttribute("r", "회원 탈퇴 성공");
+				} else {
+					request.setAttribute("r", "회원 탈퇴 실패");
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("r", "회원 탈퇴 실패");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+
 	public void join(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -103,25 +143,31 @@ public class MemberDAO {
 			MultipartRequest mr = new MultipartRequest(request, path, 31457280, "euc-kr",
 					new DefaultFileRenamePolicy());
 
-			String im_y = mr.getParameter("im_y");
-			String im_m = mr.getParameter("im_m");
-			int im_m2 = Integer.parseInt(im_m);
-			String im_d = mr.getParameter("im_d");
-			int im_d2 = Integer.parseInt(im_d);
+			String im_id = mr.getParameter("im_id");
+			String im_pw = mr.getParameter("im_pw");
+			// String im_pwChk = mr.getParameter("im_pwChk");
+			String im_name = mr.getParameter("im_name");
+			String im_addr = mr.getParameter("im_addr");
+			String im_y = mr.getParameter("im_y"); // "1982"
+			String im_m = mr.getParameter("im_m"); // "1"
+			int im_m2 = Integer.parseInt(im_m); // 1
+			String im_d = mr.getParameter("im_d"); // "2"
+			int im_d2 = Integer.parseInt(im_d); // 2
 
 			String im_birthday = String.format("%s%02d%02d", im_y, im_m2, im_d2);
+			// 19820102
 
-			String im_img = mr.getFilesystemName("im_img"); // ㅋ ㅋ.png
-			im_img = URLEncoder.encode(im_img, "euc-kr"); // %2A+%2A.png
-			im_img = im_img.replace("+", " "); // %2A %2A.png
+			String im_img = mr.getFilesystemName("im_img");
+			im_img = URLEncoder.encode(im_img, "euc-kr");
+			im_img = im_img.replace("+", " ");
 
-			String sql = "insert into IHWAC_MEMBER values(" + "?, ?, ?, ?, " + "to_date(?, 'YYYYMMDD'), " + "?)";
+			String sql = "insert into ihwac_member values(" + "?, ?, ?, ?," + "to_date(?, 'YYYYMMDD'), " + "?)";
 
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, mr.getParameter("im_id"));
-			pstmt.setString(2, mr.getParameter("im_pw"));
-			pstmt.setString(3, mr.getParameter("im_name"));
-			pstmt.setString(4, mr.getParameter("im_addr"));
+			pstmt.setString(1, im_id);
+			pstmt.setString(2, im_pw);
+			pstmt.setString(3, im_name);
+			pstmt.setString(4, im_addr);
 			pstmt.setString(5, im_birthday);
 			pstmt.setString(6, im_img);
 
@@ -131,8 +177,8 @@ public class MemberDAO {
 				request.setAttribute("r", "회원 가입 실패");
 			}
 		} catch (Exception e) {
-			request.setAttribute("r", "회원 가입 실패");
 			e.printStackTrace();
+			request.setAttribute("r", "회원 가입 실패");
 		} finally {
 			DBManager.close(con, pstmt, null);
 		}
@@ -173,9 +219,9 @@ public class MemberDAO {
 
 					HttpSession hs = request.getSession();
 					hs.setAttribute("loginMember", m);
-					hs.setMaxInactiveInterval(10); //
+					hs.setMaxInactiveInterval(15 * 60); //
 
-					// 자동 로그인 사용 여부 검사
+					// 로그인 상태 유지 체크했으면
 					if (request.getParameter("im_autologin") != null) {
 						Cookie autoLoginID = new Cookie("ihwacAutoLoginID", im_id);
 						autoLoginID.setMaxAge(86400);
@@ -214,7 +260,20 @@ public class MemberDAO {
 
 	public void logout(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession hs = request.getSession();
+		// hs.invalidate();
 		hs.setAttribute("loginMember", null);
+
+		Cookie[] allCookie = request.getCookies();
+
+		for (Cookie cookie : allCookie) {
+			// 애초에 로그인할때 체크해서 로그인 했었으면
+			if (cookie.getName().equals("ihwacAutoLoginID")) {
+				// 거기 들어있을 id 지우기
+				cookie.setValue(null);
+				response.addCookie(cookie);
+			}
+		}
+
 	}
 
 	public void update(HttpServletRequest request, HttpServletResponse response) {
@@ -250,7 +309,7 @@ public class MemberDAO {
 				im_img = URLEncoder.encode(im_img, "euc-kr");
 				im_img = im_img.replace("+", " ");
 
-				// 이전 이미지 지우자
+				// 이전 파일 지우기
 				String oldImg = m2.getIm_img();
 				oldImg = URLDecoder.decode(oldImg, "euc-kr");
 				File oldFile = new File(path + "/" + oldImg);
@@ -258,7 +317,6 @@ public class MemberDAO {
 
 			} else {
 				im_img = m2.getIm_img();
-				// ...
 			}
 			String sql = "update ihwac_member " + "set im_pw=?, im_name=?, " + "im_addr=?, im_img=?, "
 					+ "im_birthday=to_date(?, 'YYYYMMDD') " + "where im_id=?";
@@ -281,7 +339,7 @@ public class MemberDAO {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 				m.setIm_birthday(sdf.parse(im_birthday));
 
-				HttpSession hs = request.getSession();
+				// HttpSession hs = request.getSession();
 				hs.setAttribute("loginMember", m);
 
 				request.setAttribute("r", "회원 정보 수정 성공");

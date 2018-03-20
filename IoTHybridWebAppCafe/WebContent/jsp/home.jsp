@@ -8,7 +8,12 @@
 </head>
 <body>
 	<h2>¾È³ç</h2>
+	<h2 style="color:black;">http://172.16.1.100/IoTHybridWebAppCafe&nbsp;&nbsp;&nbsp;</h2>
 	<br><br><br>
-	<img src="etc/lee2.png">
+	<marquee style="width:396px;" behavior="alternate">
+		<marquee style="height:373px;" direction="up" behavior="alternate">
+			<img src="etc/lee2.png">
+		</marquee>
+	</marquee>
 </body>
 </html>
