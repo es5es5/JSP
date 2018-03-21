@@ -1,0 +1,52 @@
+@charset "EUC-KR";
+
+a {
+	text-decoration: none;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+table {
+	border-spacing: 0px;
+}
+
+#indexTitleArea {
+	width: 100%;
+	position: fixed;
+	top: 0px;
+}
+
+#indexTitleArea2 {
+	width: 1000px;
+}
+
+#indexTitleTd {
+	height: 70px;
+	padding-left: 15px;
+	background-color: #ffffffcc;
+}
+
+#indexTitle {
+	color: #0277BD;
+	font-size: 20pt;
+	font-weight: 900;
+}
+
+#indexContentArea {
+	width: 100%;
+	margin-top: 170px;
+}
+
+#indexMenuArea {
+	background-color: #0277BD99;
+	height: 40px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #01579B99;
+}
+
+#siteContentArea2 {
+	width: 1000px;
+}
