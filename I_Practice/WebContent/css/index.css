@@ -5,8 +5,13 @@ a {
 }
 
 body {
-	margin: 0px;
-	padding: 0px;
+	padding-top: 54px;
+}
+
+@media ( min-width : 992px) {
+	body {
+		padding-top: 56px;
+	}
 }
 
 table {
