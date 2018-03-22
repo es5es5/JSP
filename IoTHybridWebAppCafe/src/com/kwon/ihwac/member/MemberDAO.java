@@ -255,7 +255,6 @@ public class MemberDAO {
 		}
 		request.setAttribute("loginPage", "member/login.jsp");
 		return false;
-
 	}
 
 	public void logout(HttpServletRequest request, HttpServletResponse response) {

@@ -1,7 +1,7 @@
 @charset "EUC-KR";
 
-a {
-	text-decoration: none;
+h2 {
+	color: red;
 }
 
 body {
@@ -12,6 +12,10 @@ body {
 	body {
 		padding-top: 56px;
 	}
+}
+
+a {
+	text-decoration: none;
 }
 
 table {
@@ -31,7 +35,7 @@ table {
 #indexTitleTd {
 	height: 70px;
 	padding-left: 15px;
-	background-color: #ffffffcc;
+	background-color: #FBFBEF;
 }
 
 #indexTitle {
@@ -46,10 +50,10 @@ table {
 }
 
 #indexMenuArea {
-	background-color: #0277BD99;
+	background-color: #58ACFA;
 	height: 40px;
-	border-radius: 10px;
-	box-shadow: 5px 5px 5px #01579B99;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #A9E2F3;
 }
 
 #siteContentArea2 {

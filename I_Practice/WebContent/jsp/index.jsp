@@ -22,7 +22,7 @@
 							class="">메뉴2</a> <a href="" class="">메뉴3</a></td>
 					</tr>
 					<tr>
-						<td align="right">여기에 로그인 페이지
+						<td align="right"><jsp:include page="${loginPage}"></jsp:include>
 							</td>
 					</tr>
 				</table>
