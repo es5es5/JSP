@@ -47,8 +47,8 @@ public class MemberDAO {
 			String m_d = mr.getParameter("m_d"); // "2"
 			int m_d2 = Integer.parseInt(m_d); // 2
 
-			String m_birthday = String.format("%s%02d%02d", m_y, m_m2, m_d2);
 			// 19820102
+			String m_birthday = String.format("%s%02d%02d", m_y, m_m2, m_d2);
 
 			String m_img = mr.getFilesystemName("m_img");
 			m_img = URLEncoder.encode(m_img, "euc-kr");
@@ -62,7 +62,7 @@ public class MemberDAO {
 			pstmt.setString(3, m_name);
 			pstmt.setString(4, m_addr);
 			pstmt.setString(5, m_birthday);
-			pstmt.setString(6, m_img);
+			// pstmt.setString(6, m_img);
 
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("회원가입 성공");
@@ -142,13 +142,13 @@ public class MemberDAO {
 	}
 
 	public boolean loginCheck(HttpServletRequest request, HttpServletResponse response) {
-//		HttpSession hs = request.getSession();
-//		Member m = (Member) hs.getAttribute("loginMember");
-//
-//		if (m != null) {
-//			request.setAttribute("loginPage", "member/loginOK.jsp");
-//			return true;
-//		}
+		// HttpSession hs = request.getSession();
+		// Member m = (Member) hs.getAttribute("loginMember");
+		//
+		// if (m != null) {
+		// request.setAttribute("loginPage", "member/loginOK.jsp");
+		// return true;
+		// }
 		request.setAttribute("loginPage", "member/login.jsp");
 		return false;
 	}

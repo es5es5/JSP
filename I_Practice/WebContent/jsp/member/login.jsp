@@ -8,23 +8,38 @@
 </head>
 <body>
 	<table id="loginTable">
-		<form action="MemberLoginController" method="post" name="loginForm"
-			onsubmit="">
+		<form action="MemberLoginController" method="post" name="loginForm">
 			<tr>
-				<td class="loginTd1" align="center">id</td>
-				<td><input type="text" name="m_id" placeholder="ID 입력"
-					class="loginInput"></td>
-			</tr>
-			<tr>
-				<td class="loginTd1" align="center">pw</td>
-				<td><input type="password" name="m_pw" class="loginInput">
+				<td>
+					<table>
+						<tr>
+							<td class="loginTd1" align="center">id</td>
+							<td><input type="text" name="m_id" placeholder="ID 입력"
+								class="loginInput"></td>
+							<td>
+							<td colspan="2" align="center"><input type="submit"
+								value="로그인"></td>
+						</tr>
+					</table>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" value="로그인">
-					<button onclick="goJoin();" class="loginInput">회원가입</button></td>
+				<td>
+					<table>
+						<tr>
+							<td class="loginTd1" align="center">pw</td>
+							<td><input type="password" name="m_pw" class="loginInput"></td>
+							</form>
+							<td><button onclick="goJoin();" class="loginInput">회원가입</button></td>
+						</tr>
+					</table>
+				</td>
+			<tr>
+				<td colspan="2"><input type="checkbox" name="m_autologin">로그인
+					상태 유지</td>
 			</tr>
-		</form>
+			</tr>
 	</table>
+
 </body>
 </html>

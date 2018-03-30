@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <link rel="stylesheet" href="css/index.css">
+<script type="text/javascript" src="js/go.js"></script>
 <title>멍멍이랑 냥냥이</title>
 </head>
 <body>

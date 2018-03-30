@@ -31,6 +31,7 @@ public class MemberJoinController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("GETµé¾î¿È");
 		DateManager.getCurrentYear(request, response);
 		MemberDAO.getMdao().loginCheck(request, response);
 		request.setAttribute("contentPage", "member/join.jsp");
@@ -43,10 +44,10 @@ public class MemberJoinController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		MemberDAO.getMdao().join(request, response);
-		MemberDAO.getMdao().loginCheck(request, response);
-		request.setAttribute("contentPage", "home.jsp");
-		request.getRequestDispatcher("jsp/index.jsp").forward(request, response);
+//		MemberDAO.getMdao().join(request, response);
+//		MemberDAO.getMdao().loginCheck(request, response);
+//		request.setAttribute("contentPage", "home.jsp");
+//		request.getRequestDispatcher("jsp/index.jsp").forward(request, response);
 	}
 
 }
