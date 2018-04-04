@@ -27,9 +27,9 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-			<input type="submit" value="로그인" class="loginBtn">
+			<input type="submit" value="로그인" class="loginBtn"><td>
 		</form>
-			<button onclick="goJoin();" class="loginBtn">회원가입</button></td>
+			<td><button onclick="goJoin();" class="loginBtn">회원가입</button></td>
 		</tr>
 		<tr>
 			<td colspan="2" align="right" style="color:yellow;">${r }&nbsp;&nbsp;</td> 
